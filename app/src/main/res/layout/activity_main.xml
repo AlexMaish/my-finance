@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root.layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="My Finance App"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="12dp"
+            android:text="Account Type"
+            android:textAppearance="?textAppearanceBody2"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg.account.type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb.account.checking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checking Account"
+                android:textAppearance="?textAppearanceBody2" />
+
+            <RadioButton
+                android:id="@+id/rb.cd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CD Account"
+                android:textAppearance="?textAppearanceBody2" />
+
+            <RadioButton
+                android:id="@+id/rb.loan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Loan Account"
+                android:textAppearance="?textAppearanceBody2" />
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toBottomOf="@id/rg.account.type">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Account Details"
+                android:textAppearance="?textAppearanceBody2"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_account_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:hint="Account Number"
+                android:textAppearance="?textAppearanceBody2" />
+
+            <EditText
+                android:id="@+id/edt_initial_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Initial Balance"
+                android:inputType="number"
+                android:textAppearance="?textAppearanceBody2" />
+
+            <EditText
+                android:id="@+id/edt_current_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:hint="Current Balance"
+                android:inputType="number"
+                android:textAppearance="?textAppearanceBody2" />
+
+
+            <EditText
+                android:id="@+id/edt_payment_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Payment Amount"
+                android:inputType="number"
+                android:textAppearance="?textAppearanceBody2" />
+
+
+            <EditText
+                android:id="@+id/edt_interest_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:hint="Interest Rate"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAppearance="?textAppearanceBody2" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_save_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="Save"
+                android:textAppearance="?textAppearanceBody2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_clear_inputs"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_clear_inputs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:text="Cancel"
+                android:textAppearance="?textAppearanceBody2"
+                app:layout_constraintEnd_toStartOf="@id/btn_save_account"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
